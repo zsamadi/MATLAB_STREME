@@ -8,7 +8,7 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
     
     
 <ul>
- <li>**'myFile.txt'**, input filename for fasta format data<li>
+ <li>** 'myFile.txt' **, input filename for fasta format data<li>
   <li>**NEVAL=25** , number of initial Evaluated seeds.<li>
   <li>**NREF=4**, number of refined seeds<br>
   <li>**nRefIter= 20**, number of iterations for nesteled enrichment <br>
@@ -23,3 +23,4 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
   <li> **alphabet='ABCDEFGHIJKLMNO'**, alphabet for input data<br>
   <li> **patternFile='patternList.txt'**, File containing the pattern embedded in the graph, it could be a list of W letter patterns or a list of W*L PWM matrices.<br>  
   <li> **isPWM=true**, true if input pattern file is a list of PWM matrices.<br> 
+<ul>
