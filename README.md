@@ -8,22 +8,22 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
   | input       | Description | 
 | :---        |    :----:   |  
 | **'myFile.txt'**      | input filename for fasta format data.       | 
-| **NEVAL=25**,   | number of initial Evaluated seeds.        | 
-|  **'myFile.txt'**,   |    input filename for fasta format data.  |
-|  **NEVAL=25**,      |     number of initial Evaluated seeds.  |
-|  **NREF=4**,         |    number of refined seeds.  |
-|  **nRefIter= 20**,   |    number of iterations for nesteled enrichment.  |
-|  **patience=3**,     |    number consecutive nonsiginificant motifs.   |
-|  **evalue=false**,   |    using evalue instead of pvalue for significance test.  |
-|  **nmotifs=0**,      |    number of motifs we are looking for, overwrites threshold if it's greater than 0.  |
-|  **rvp=true**,        |   reverse path.  |
- |  **mkvOrder=0**,    |    markov order for background and negetive data generation.  |
-|  **W=4**,              | length of the motif.   |
-|  **threshold=0.01**,  |  threshold for motif pvalue obtained from hold-out testing data.   |
-|  **hFract=0.1**,     |   Fraction of data as hold-out.  |
-|  **alphabet='ABCDEFGHIJKLMNO'**,   |     alphabet for input data.  |
-|  **patternFile='patternList.txt'**,    | File containing the pattern embedded in the graph, it could be a list of W letter patterns or a list of W*L PWM matrices.  |  
-|  **isPWM=true**,                |        true if input pattern file is a list of PWM matrices.
+| **NEVAL=25**  | number of initial Evaluated seeds.        | 
+|  **'myFile.txt'**   |    input filename for fasta format data.  |
+|  **NEVAL=25**      |     number of initial Evaluated seeds.  |
+|  **NREF=4**        |    number of refined seeds.  |
+|  **nRefIter= 20**   |    number of iterations for nesteled enrichment.  |
+|  **patience=3**    |    number consecutive nonsiginificant motifs.   |
+|  **evalue=false**   |    using evalue instead of pvalue for significance test.  |
+|  **nmotifs=0**      |    number of motifs we are looking for, overwrites threshold if it's greater than 0.  |
+|  **rvp=true**        |   reverse path.  |
+ |  **mkvOrder=0**    |    markov order for background and negetive data generation.  |
+|  **W=4**             | length of the motif.   |
+|  **threshold=0.01**  |  threshold for motif pvalue obtained from hold-out testing data.   |
+|  **hFract=0.1**     |   Fraction of data as hold-out.  |
+|  **alphabet='ABCDEFGHIJKLMNO'**   |     alphabet for input data.  |
+|  **patternFile='patternList.txt'**    | File containing the pattern embedded in the graph, it could be a list of W letter patterns or a list of W*L PWM matrices.  |  
+|  **isPWM=true**                |        true if input pattern file is a list of PWM matrices.
 
 
 
