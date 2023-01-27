@@ -8,8 +8,8 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
     
     
 <ul>
- <li>**'myFile.txt'**, input filename for fasta format data<br>
-  <li>**NEVAL=25** , number of initial Evaluated seeds.<br>
+ <li>**'myFile.txt'**, input filename for fasta format data<li>
+  <li>**NEVAL=25** , number of initial Evaluated seeds.<li>
   <li>**NREF=4**, number of refined seeds<br>
   <li>**nRefIter= 20**, number of iterations for nesteled enrichment <br>
  <li> **patience=3**, number consecutive nonsiginificant motifs. <br>
