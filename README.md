@@ -5,7 +5,8 @@ The main function for running the algorithm is runStreme. You can rum the algori
 runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvp=true, ...
     mkvOrder=0, W=4,threshold=0.01, hFract=0.1, alphabet='ABCDEFGHIJKLMNO', patternFile='patternList.txt', isPWM=true);
     
-  'myFile.txt', input filename for fasta format data
+  ## 'myFile.txt', 
+  input filename for fasta format data
   NEVAL=25 , number of initial Evaluated seeds.
   NREF=4, number of refined seeds
   nRefIter= 20, number of iterations for nesteled enrichment 
