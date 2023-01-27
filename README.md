@@ -8,19 +8,19 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
     
     
 <ul>
- <li>** 'myFile.txt' **, input filename for fasta format data<li>
-  <li>**NEVAL=25** , number of initial Evaluated seeds.<li>
-  <li>**NREF=4**, number of refined seeds<br>
-  <li>**nRefIter= 20**, number of iterations for nesteled enrichment <br>
- <li> **patience=3**, number consecutive nonsiginificant motifs. <br>
- <li> **evalue=false**, using evalue instead of pvalue for significance test.<br> 
-  <li>**nmotifs=0**, number of motifs we are looking for, overwrites threshold if it's greater than 0.<br> 
- <li> **rvp=true**, reverse path <br>
- <li> **mkvOrder=0**, markov order for background and negetive data generation.<br>
- <li> **W=4**, length of the motif. <br>
-  <li>**threshold=0.01**, threshold for motif pvalue obtained from hold-out testing data. <br>
- <li>  **hFract=0.1**, Fraction of data as hold-out.<br>
-  <li> **alphabet='ABCDEFGHIJKLMNO'**, alphabet for input data<br>
-  <li> **patternFile='patternList.txt'**, File containing the pattern embedded in the graph, it could be a list of W letter patterns or a list of W*L PWM matrices.<br>  
-  <li> **isPWM=true**, true if input pattern file is a list of PWM matrices.<br> 
-<ul>
+ <li>** 'myFile.txt' **, input filename for fasta format data</li>
+  <li>**NEVAL=25** , number of initial Evaluated seeds.</li>
+  <li>**NREF=4**, number of refined seeds</li>
+  <li>**nRefIter= 20**, number of iterations for nesteled enrichment </li>
+ <li> **patience=3**, number consecutive nonsiginificant motifs. </li>
+ <li> **evalue=false**, using evalue instead of pvalue for significance test.</li> 
+  <li>**nmotifs=0**, number of motifs we are looking for, overwrites threshold if it's greater than 0.</li>
+ <li> **rvp=true**, reverse path</li>
+ <li> **mkvOrder=0**, markov order for background and negetive data generation.</li>
+ <li> **W=4**, length of the motif. </li>
+  <li>**threshold=0.01**, threshold for motif pvalue obtained from hold-out testing data. </li>
+ <li>  **hFract=0.1**, Fraction of data as hold-out.</li>
+  <li> **alphabet='ABCDEFGHIJKLMNO'**, alphabet for input data.</li>
+  <li> **patternFile='patternList.txt'**, File containing the pattern embedded in the graph, it could be a list of W letter patterns or a list of W*L PWM matrices.</li>  
+  <li> **isPWM=true**, true if input pattern file is a list of PWM matrices.</li>
+<\ul>
