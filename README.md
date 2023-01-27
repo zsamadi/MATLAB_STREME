@@ -21,3 +21,8 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
  * **patternFile='patternList.txt'**,   File containing the pattern embedded in the graph, it could be a list of W letter patterns or a list of W*L PWM matrices.</li>  
  * **isPWM=true**,                      true if input pattern file is a list of PWM matrices.
 
+| input       | Description | 
+| :---        |    :----:   |  
+| **'myFile.txt'**      | input filename for fasta format data.       | 
+| **NEVAL=25**,   | number of initial Evaluated seeds.        | 
+
