@@ -13,8 +13,6 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
 | :---        |    :----:   |  
 | **'myFile.txt'**      | input filename for fasta format data.       | 
 | **NEVAL=25**  | number of initial Evaluated seeds.        | 
-|  **'myFile.txt'**   |    input filename for fasta format data.  |
-|  **NEVAL=25**      |     number of initial Evaluated seeds.  |
 |  **NREF=4**        |    number of refined seeds.  |
 |  **nRefIter= 20**   |    number of iterations for nestled enrichment.  |
 |  **patience=3**    |    number consecutive nonsignificant motifs.   |
