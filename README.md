@@ -28,7 +28,7 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
 |  **isPWM=true**                |        true if input pattern file is a list of PWM matrices.
 
 ## TomTom Test
-This function also runs TomTom test by inputting pattern file and specifying if the pattern file is list of embedded motifs or a list PWM matrices. The results of TomTom are plotted in two figures, first one finds best matches of the patttern motifs in the extracted motifs. There are two labels above each point, first label is the indext number of pattern motifs in the input pattern list, and the second number is the index of the extracted motif, which is printed out in MatSTREME.txt file in the output folder. Minus sign of the second label indicates that the reverse of that specific motif matches with the input motif. 
+This function also runs TomTom test by inputting pattern file and specifying if the pattern file is list of embedded motifs or a list PWM matrices. The results of TomTom are plotted in two figures, first one finds best matches of the patttern motifs in the extracted motifs. There are two labels above each point, first label is the indext number of pattern motifs in the input pattern list, and the second number is the index of the extracted motif, which is printed out in MatSTREME.txt file in the output folder. Minus sign of the second label indicates that the reverse of that specific motif matches with the input motif. For example, in the following figure, pattern 8 is best matched with the inverse of extracted motif, 18, and pattern 18 is best matched with extracted motif 9. 
 
 ![TomTom Test Result](/doc/Tomex.png "Example Output Result")
 
