@@ -38,6 +38,7 @@ sqOptions.rvp=options.rvp;
 sqOptions.isChar=true;
 sqOptions.aLen=length(options.alphabet);
 
+fprintf('Creating Negative and Hold-Out Data... ');
 
 [posSeq, negSeq, pHoldSeq, nHoldSeq]=inputFastaRead(filename, sqOptions);
 
