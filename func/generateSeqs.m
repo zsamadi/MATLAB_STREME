@@ -38,21 +38,16 @@ for iSp=1:numSeqs
 
     end
 
-    if order==0
-        rng(iSp);
-        shIdx=randperm(length(dstreamChar));
-        shuffled=dstreamChar(shIdx);
 
-    else
 
-        shuffled=ushuffle(dstreamChar, order+1);
+    shuffled=ushuffle(dstreamChar, order+1);
+  
+    shStream{iSp}=double(shuffled)-64;
+
+   if (rvpath)
+       dstreamInv{iSp}=dstreamDouble{iSp}(end:-1:1);
+       shStreamInv{iSp}=shStream{iSp}(end:-1:1);
     end
-        shStream{iSp}=double(shuffled)-64;
-
-        if (rvpath)
-            dstreamInv{iSp}=dstreamDouble{iSp}(end:-1:1);
-            shStreamInv{iSp}=shStream{iSp}(end:-1:1);
-        end
             
 
 
