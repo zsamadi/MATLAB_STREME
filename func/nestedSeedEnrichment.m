@@ -192,7 +192,7 @@ while (refIter<=nRefIter)
                 PWM1=(PWM1+PWM1(:, end:-1:1))/2;
             end
             
-            PWM1L=log(PWM1);
+            PWM1L=log2(PWM1);
             if options.mkvOrder>0
                 PWMS=PWM1L;
             else
