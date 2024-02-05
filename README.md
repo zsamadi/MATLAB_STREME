@@ -1,4 +1,4 @@
-# GraphMPathMotif
+# SMORE
 Repository for finding meta path motifs in heterogenous graphs.
 
 The main function for running the algorithm is runStreme. You can rum the algorithm on your dataset by runStreme('myFile.txt'), where myFile.txt is the name of fasta format file for input sequences. This will run the algorithm with the default settings, listed in the following.
