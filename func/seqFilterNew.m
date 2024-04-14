@@ -86,7 +86,7 @@ eraseFlagLetteron=eraseFlagLetteron(:);
 
 %Also erase reverse path
 if filterSpecs.rvp
-    [PWMScoreoRVP, PWMScoreLetteroRVP]=scoreWords(XNmerUo, PWMS(:, end:-1:1), filterSpecs);
+    [PWMScoreoRVP, PWMScoreLetteroRVP]=scoreWords(XNmerUo, PWMS(end:-1:1, end:-1:1), filterSpecs);
     
     eraseFlagoRVP=(PWMScoreoRVP>=threshold);
     
@@ -119,7 +119,7 @@ seqFilteredERS(eraseLetters)=0;
 seqFiltered=mat2cell(seqFilteredERS, 1,seqLens);
 
 if (filterSpecs.rvp)
-    seqFilteredRVP=mat2cell(seqFilteredERS(end:-1:1), 1,seqLens(end:-1:1));
+    seqFilteredRVP=mat2cell(revCmp(seqFilteredERS, size(PWMS, 1)), 1,seqLens(end:-1:1));
     seqFilteredRVP=seqFilteredRVP(end:-1:1);
     seqFiltered=(horzcat(seqFiltered, seqFilteredRVP)).';
 

@@ -118,7 +118,7 @@ if (options.rvp)
 
     unqWMersAllS=unqWMersAll;
     swFlag=unqWMersAllS(:, 1)>unqWMersAllS(:, end);
-    unqWMersAllS(swFlag, :)=unqWMersAllS(swFlag, end:-1:1);
+    unqWMersAllS(swFlag, :)=revCmp(unqWMersAllS(swFlag, :), numCells);
     
     [~, iSW]=unique(unqWMersAllS, "rows", 'stable');
     unqWMersAll=unqWMersAll(iSW, :);
@@ -144,9 +144,11 @@ for wi=wMax-numWs+1:wMax
     wiFlad=(wSeedsExt==wi);
 
     idxs=idxs(wiFlad);
-    seedsNEVALN=idxs(NEVAL);
-    if seedsNEVALN>seedsNEVAL
-        seedsNEVAL=seedsNEVALN;
+    if ~isempty(idxs)
+        seedsNEVALN=idxs(min(NEVAL, length(idxs)));
+        if seedsNEVALN>seedsNEVAL
+            seedsNEVAL=seedsNEVALN;
+        end
     end
 end
 

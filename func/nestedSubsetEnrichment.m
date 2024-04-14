@@ -57,6 +57,7 @@ pvalueOptimum=ones(NREF,1);
 thrOptVec=zeros(NREF,1);
 iterNumbers=zeros(NREF,1);
 PWMSCell=cell(NREF, 1);
+PWMOutCell=cell(NREF, 1);
 
 % motifsNREF=motifsNREF(2:end, :);
 consensusSeedMat=seedsNREF;
@@ -91,6 +92,7 @@ for imotifSeq=1:NREF
 
 
     PWMSCell{imotifSeq}=seedEnriched.PWMS;
+    PWMOutCell{imotifSeq}=seedEnriched.PWMOut;
 
 
     thrOptVec(imotifSeq)=seedEnriched.thresholdOptimum;
@@ -111,7 +113,7 @@ motifsRefined.seeds=consensusSeedMat;
 motifsRefined.pvalues=pvalueOptimum;
 motifsRefined.PWMSCell=PWMSCell;
 motifsRefined.thresholdOptimum=thrOptVec;
-
+motifsRefined.PWMOutCell=PWMOutCell;
 
 
 motifsRefined.seedsChar=[char(seedsNREF+64), num2str([pvalueOptimum, thrOptVec])];
@@ -141,6 +143,7 @@ if (options.rvp)
         motifsRefined.seeds(1, :)=motifPal.seed;
         motifsRefined.pvalues(1)=motifPal.pvalue;
         motifsRefined.PWMSCell{1}=motifPal.PWMS;
+        motifsRefined.PWMOutCell{1}=motifPal.PWMOut;
         motifsRefined.thresholdOptimum(1)=motifPal.thresholdOptimum;
         motifsRefined.isPal=true;
     end

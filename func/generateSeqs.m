@@ -29,7 +29,7 @@ for iSp=1:numSeqs
 
     if (options.isChar)
         dstreamChar=dstream{iSp};
-        dstreamDouble{iSp}=double(dstreamChar)-64;
+        [~, dstreamDouble{iSp}]=ismember(dstreamChar, options.alphabet);
 
     else
         dstreamChar=char(dstream{iSp}+64);
@@ -42,11 +42,11 @@ for iSp=1:numSeqs
 
     shuffled=ushuffle(dstreamChar, order+1);
   
-    shStream{iSp}=double(shuffled)-64;
+    [~,shStream{iSp}]=ismember(shuffled, options.alphabet);
 
    if (rvpath)
-       dstreamInv{iSp}=dstreamDouble{iSp}(end:-1:1);
-       shStreamInv{iSp}=shStream{iSp}(end:-1:1);
+       dstreamInv{iSp}=revCmp(dstreamDouble{iSp}, options.aLen); 
+       shStreamInv{iSp}=revCmp(shStream{iSp}, options.aLen);
     end
             
 

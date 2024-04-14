@@ -29,6 +29,8 @@ function outMotif=scoreModelPssm(seedsRefined, seqData, options)
 posHoldSeq=seqData.pHSeq;
 negHoldSeq=seqData.nHSeq;
 PWMSCell=seedsRefined.PWMSCell;
+PWMOutCell=seedsRefined.PWMOutCell;
+
 thrOpt=seedsRefined.thresholdOptimum;
 
 if options.rvp
@@ -78,6 +80,8 @@ end
 
 
 outMotif.PWMSE=log2(PWMSCell{1})-log2(scrSpecs.back{1});
+outMotif.PWMOut=log2(PWMOutCell{1})-log2(scrSpecs.back{1});
+
 outMotif.cSeed=seedsRefined.seeds(1, :);
 outMotif.scoreThr=thrOpt(1);
 outMotif.trainPvalue=seedsRefined.pvalues(1);

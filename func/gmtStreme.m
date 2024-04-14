@@ -159,11 +159,11 @@ while(isEraseOccured && numPateince<options.patience)
 
         outMotif.nsites=sum(sitesErased.pSeq)+sum(sitesErased.pHSeq);
 
-        PWMSE=outMotif.PWMSE;
+        PWMOut=outMotif.PWMOut;
         if options.mkvOrder>0
-           PWM1=2.^(PWMSE);
+           PWM1=2.^(PWMOut);
         else
-            PWM1=2.^(PWMSE).*background{1};
+            PWM1=2.^(PWMOut).*background{1};
         end
 
         PWM1=round(PWM1, 6);

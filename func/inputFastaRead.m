@@ -15,7 +15,7 @@ aLen=options.aLen;
 for iStrct=1:numData
     datai=fastaStruct(iStrct).Sequence;
     dstream{iStrct}=datai;
-    dataidb=double(datai)-64;
+    [~, dataidb]=ismember(datai, options.alphabet);
     dataID=sum(dataidb.*(aLen.^(length(dataidb)-1:-1:0)));
     dstreamID(iStrct)=dataID;
     

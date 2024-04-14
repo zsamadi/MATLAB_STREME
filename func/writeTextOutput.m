@@ -1,4 +1,4 @@
-function done=writeTextOutput(filename, motifsCell,bkg, textIn,commandText, elapsedTime)
+function done=writeTextOutput(filename, motifsCell,bkg, textIn,commandText, elapsedTime, alphabet)
 
 PWM0=bkg.PWM0;
 
@@ -32,22 +32,33 @@ fprintf(fileID,'"STREME: accurate and versatile sequence motif discovery",\n');
 
 fprintf(fileID,'Bioinformatics, Mar. 24, 2021.\n');
 fprintf(fileID,starLine);
+
+fprintf(fileID,'Zainalabedin Samadi, Amjad Askary\n');
+fprintf(fileID,'"Spatial motifs reveal patterns in cellular architecture of complex tissues",\n');
+
+fprintf(fileID,'biorxiv, Apr. 21, 2024.\n');
+fprintf(fileID,starLine);
+
 fprintf(fileID,'\n');
 
 fprintf(fileID,'\n');
 fprintf(fileID,starLine);
-fprintf(fileID,'ALPHABET "ABCDEFGHIJKLMNO"\n');
+fprintf(fileID,sprintf('ALPHABET "%s"\n', alphabet));
 fprintf(fileID,starLine);
 
 fprintf(fileID,'Background letter frequencies\n');
 
-fprintf(fileID,'A %1.5f B %1.5f C %1.5f D %1.5f E %1.5f F %1.5f G %1.5f H %1.5f I %1.5f J %1.5f K %1.5f L %1.5f M %1.5f N %1.5f O %1.5f\n', PWM0);
+for ipw=1:length(PWM0)
+
+fprintf(fileID,'%s:%1.5f,', alphabet(ipw), PWM0(ipw));
+end
+fprintf(fileID,'\n');
 fprintf(fileID,'\n');
 
 for im=1:length(motifsCell)
     outMotif=motifsCell{im};
     seedi=outMotif.cSeed;
-    seediChar=char(seedi+64);
+    seediChar=alphabet(seedi);
 
 %     secSeedi=outMotif.secSeeds(1, :);
 %     secSeediChar=char(secSeedi+64);
@@ -83,9 +94,9 @@ fprintf(fileID,starLine);
 fprintf(fileID,textIn);
 fprintf(fileID,starLine);
 
-commandText=strcat("COMMAND:    ",commandText, '\n');
-fprintf(fileID,commandText);
-fprintf(fileID,starLine);
+% commandText=strcat("COMMAND:    ",commandText, '\n');
+% fprintf(fileID,commandText);
+% fprintf(fileID,starLine);
 
 pcName = getenv('COMPUTERNAME');
 

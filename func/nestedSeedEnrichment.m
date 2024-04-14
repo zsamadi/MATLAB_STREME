@@ -140,12 +140,12 @@ while (refIter<=nRefIter)
     appxSeeds=appxSeeds(1:sumSelIndexes, :);
     appxSeedsLogPvalues=appxPvalues(1:sumSelIndexes);
     appxSeedsLogPvalues=min(appxSeedsLogPvalues, 0);
+    PWM1Out=PWM1;
 
 
     % update motif with the sites above the threshold, only if pvalue
     % is improved
     if (pvalue<pvalue0 && refIter<nRefIter)
-        PWMS0=PWMS;
         PWM10=PWM1;
 
         if sumSelIndexes>1
@@ -220,6 +220,7 @@ if refIter0==nRefIter
     seedEnriched.pvalue=pvalue;
     seedEnriched.PWMS=PWM1;
     seedEnriched.thresholdOptimum=thrOptimum;
+    seedEnriched.PWMOut=PWM1;
 else
 
     [~, consensusSeed]=max(PWM10);
@@ -228,6 +229,7 @@ else
     seedEnriched.pvalue=pvalue0;
     seedEnriched.PWMS=PWM10;
     seedEnriched.thresholdOptimum=thrOptimum0;
+    seedEnriched.PWMOut=PWM1Out;
 end
 
 end

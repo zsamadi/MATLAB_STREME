@@ -16,7 +16,7 @@ for iPt=1:length(Querry)
     [outMatch, outIdx]=tomtom(PWM1, motifPWMs);
 
     if options.rvp
-        [outMatchInv, outIdxInv]=tomtom(PWM1(end:-1:1, :), motifPWMs);
+        [outMatchInv, outIdxInv]=tomtom(PWM1(end:-1:1, end:-1:1), motifPWMs);
         invFlag=outMatchInv(:,1)<outMatch(:,1);
 
         outMatch(invFlag, :)=outMatchInv(invFlag, :);

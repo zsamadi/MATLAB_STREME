@@ -1,0 +1,154 @@
+function runStreme(filename, options)
+
+
+arguments
+    filename='exData.txt'
+    options.NEVAL=25;
+    options.NREF=4;
+    options.prior=0.01;
+    options.REFPrior=0.1;
+    options.ENRCHPrior=0.1;
+    options.W=4;
+    options.nRefIter=20;
+    options.threshold=0.05;
+    options.patience=3;
+    options.evalue=false;
+    options.nmotifs=0;
+    options.alphabet='ABCDEFGHIJKL';
+    options.mkvOrder=0;
+    options.rvp=true;
+    options.hFrac=0.1;
+    options.isPWM=false;
+    options.patternFile='patternList.txt';
+
+end
+
+if(~isdeployed)
+    cd(fileparts(which(mfilename)));
+end
+
+
+
+addpath(genpath(pwd))
+
+
+
+timerValue=tic;
+
+sqOptions.hFrac=options.hFrac;
+sqOptions.mkvOrder=options.mkvOrder;
+sqOptions.rvp=options.rvp;
+sqOptions.isChar=true;
+sqOptions.aLen=length(options.alphabet);
+sqOptions.alphabet=options.alphabet;
+
+fprintf('Creating Negative and Hold-Out Data... ');
+
+[posSeq, negSeq, pHoldSeq, nHoldSeq]=inputFastaRead(filename, sqOptions);
+
+
+bernoulli=getBernoulli(posSeq, negSeq, options.W);
+
+options.prior=0.01;
+options.REFPrior=0.1;
+options.ENRCHPrior=0.1;
+options.wMin=options.W;
+options.wMax=options.W;
+options.MinSeedWidth=3;
+
+options.maxPalED=5;
+options.minPalRatio=0.85;
+options.isPal=false;
+options.bernoulli=bernoulli;
+
+
+seqData.pSeq=posSeq;
+seqData.nSeq=negSeq;
+seqData.pHSeq=pHoldSeq;
+seqData.nHSeq=nHoldSeq;
+
+
+[extMotif,textOut, commandText, background]=gmtStreme(seqData, options);
+
+
+
+
+
+
+elapsedTime=toc(timerValue);
+
+
+bkg.PWM0=background{1};
+bkg.mkvOrder=options.mkvOrder;
+filename='output/MatSTREME.txt';
+writeTextOutput(filename, extMotif,bkg,  textOut,commandText, elapsedTime, options.alphabet);
+
+
+%% Seqlogo
+
+cTypeChars=options.alphabet;
+
+for iexMotif=1:numExtMotifs
+
+    exMotifi=extMotif{iexMotif};
+    exMotifi.background=background;
+
+    [~, hfig] = seqlogoGen(exMotifi, alphabet);
+    [~, exMotifi.cSeed]=max(exMotifi.PWM);
+
+    cSeedStr = strjoin(string(exMotifi.cSeed), '_');
+
+    figname=strcat(outputFolderName, 'mLogo',num2str(iexMotif), '_',cSeedStr, fignamExtnd);
+    saveas(hfig,figname)
+
+end
+
+%% PValues
+
+pvalueVec=zeros(numExtMotifs, 1);
+scoreThrVec=zeros(numExtMotifs, 1);
+
+for iexMotif=1:numExtMotifs
+
+    exMotifi=extMotif{iexMotif};
+    pvalueVec(iexMotif)=exMotifi.testPvalue;
+    scoreThrVec(iexMotif)=exMotifi.scoreThr;
+
+end
+
+figure('visible','off');
+plot(pvalueVec, '-kv', 'LineWidth',1)
+grid on
+
+xlabel('motif index')
+ylabel('pvalue')
+
+figname=strcat(outputFolderName,'pvalueW', num2str(W), fignamExtnd);
+saveas(gcf,figname)
+
+
+
+%
+
+rmeConfig=cgOptions;
+
+rmeConfig.cTypeChars=cTypeChars;
+
+rmeConfig.cellTypes=cellTypesOne;
+
+rmeConfig.W=W;
+
+rmeConfig.randiHold=randiHold;
+
+if  strcmpi(shuffleMode, 'noisy')
+    rmeConfig.randiHoldR=randiHoldR;
+else
+    rmeConfig.randiHoldR=randiHold;
+end
+
+readmeFileName=strcat(outputFolderName,'readme.txt');
+rmeConfig.isEraseFixed=false;
+rmeConfig.commandText=commandText;
+writeReadme(readmeFileName, rmeConfig);
+
+
