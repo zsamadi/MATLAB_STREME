@@ -6,9 +6,12 @@ The main function for running the algorithm is runStreme. You can rum the algori
 
 You can change these parameters  by including them in the input, for example,  runStreme('myFile.fasta',W=8, mkvOrder=1, rvp=true) runs the algorithm with motif length set to 8,  Markov order set to 1 and reverse complement set to true. Output results are saved in matStreme.txt file in the output folder.
 
-An example general case of running the algorithm is  
+An example general case of running the algorithm is
+'''
 runStreme('myFile.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvp=true, ...
     mkvOrder=0, W=6,threshold=0.01, hFract=0.1, alphabet='ABCDEFGHIJKLMNO');
+
+'''
   
   | input       | Description | 
 | :---        |    :----:   |  
