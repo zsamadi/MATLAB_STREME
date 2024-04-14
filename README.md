@@ -1,5 +1,6 @@
 # Matlab STREME
-Repository for finding meta path motifs in heterogenous graphs.
+
+Matlab reimplementation of STREME(Sensitive, Thorough, Rapid, Enriched Motif Elicitation) algorithm which discovers ungapped motifs that are enriched in input sequences. Please refere to algorithm's official page for more details. 
 
 The main function for running the algorithm is runStreme. You can rum the algorithm on your dataset by runStreme('myFile.fasta'), where myFile.txt is the name of fasta format file for input sequences. This will run the algorithm with the default settings, listed in the following.
 
@@ -11,7 +12,7 @@ runStreme('myFile.txt',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, 
   
   | input       | Description | 
 | :---        |    :----:   |  
-| **'myFile.txt'**      | input filename for fasta format data.       | 
+| **'exDataFa.fasta'**      | input filename for fasta format data.       | 
 | **NEVAL=25**  | number of initial Evaluated seeds.        | 
 |  **NREF=4**        |    number of refined seeds.  |
 |  **nRefIter= 20**   |    number of iterations for nestled enrichment.  |
