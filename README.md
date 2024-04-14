@@ -2,9 +2,9 @@
 
 Matlab reimplementation of STREME (Sensitive, Thorough, Rapid, Enriched Motif Elicitation) algorithm which discovers ungapped motifs that are enriched in input sequences. Please refere to algorithm's [official page](https://meme-suite.org/meme/doc/streme.html) for more details. 
 
-The main function for running the algorithm is runStreme. You can rum the algorithm on your dataset by runStreme('myFile.fasta'), where myFile.fasta is the name of fasta format file for input sequences. This will run the algorithm with the default settings, listed in the following.
+The main function for running the algorithm is runStreme. You can run the algorithm on your dataset by runStreme('myFile.fasta'), where myFile.fasta is the name of fasta format file for input sequences. This will run the algorithm with the default settings, listed in the following.
 
-You can change these parameters  by including them in the input, for example,  runStreme('myFile.fasta',W=8, mkvOrder=1, rvp=true) runs the algorithm with motif length set to 8,  Markov order set to 1 and reverse complement set to true. Output results are saved in matStreme.txt file in the output folder.
+You can change these parameters  by including them in the input parameters, for example,  runStreme('myFile.fasta',W=8, mkvOrder=1, rvp=true) runs the algorithm with motif length set to 8,  Markov order set to 1 and reverse complement set to true. Output results are saved in matStreme.txt file in the output folder.
 
 An example general case of running the algorithm is
 
