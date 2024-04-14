@@ -34,4 +34,10 @@ runStreme('myFile.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false
 
 ```
   
+[func](https://github.com/zsamadi/SMORE/tree/main/func)
 
+Contains related functions for running Streme. This folder should be at the same folder as run folder or its path should be added to the MATLAB path. 
+
+[output](https://github.com/zsamadi/SMORE/tree/main/output)
+
+Default folder for saving the output results. The folder currently contains output results of running the algorithm on the default input of "exDataFa.fasta" file. 
