@@ -2,30 +2,32 @@ function runStreme(filename, options)
 
 
 arguments
-    filename='exData.txt'
+
+    filename='exDataFa.fasta';
     options.NEVAL=25;
     options.NREF=4;
     options.prior=0.01;
     options.REFPrior=0.1;
     options.ENRCHPrior=0.1;
-    options.W=4;
+    options.W=6;
     options.nRefIter=20;
-    options.threshold=0.05;
+    options.threshold=0.01;
     options.patience=3;
     options.evalue=false;
     options.nmotifs=0;
-    options.alphabet='ABCDEFGHIJKL';
+    options.alphabet='ACGT';
     options.mkvOrder=0;
     options.rvp=true;
     options.hFrac=0.1;
-    options.isPWM=false;
-    options.patternFile='patternList.txt';
 
 end
 
-if(~isdeployed)
-    cd(fileparts(which(mfilename)));
-end
+outputFolderName='output/';
+
+cd(fileparts(which(mfilename)));
+cd('..\')
+
+
 
 
 
@@ -42,7 +44,7 @@ sqOptions.isChar=true;
 sqOptions.aLen=length(options.alphabet);
 sqOptions.alphabet=options.alphabet;
 
-fprintf('Creating Negative and Hold-Out Data... ');
+fprintf('Creating Negative Control and Hold-Out Data... \n ');
 
 [posSeq, negSeq, pHoldSeq, nHoldSeq]=inputFastaRead(filename, sqOptions);
 
@@ -85,20 +87,19 @@ writeTextOutput(filename, extMotif,bkg,  textOut,commandText, elapsedTime, optio
 
 
 %% Seqlogo
-
-cTypeChars=options.alphabet;
+numExtMotifs=length(extMotif);
 
 for iexMotif=1:numExtMotifs
 
     exMotifi=extMotif{iexMotif};
     exMotifi.background=background;
 
-    [~, hfig] = seqlogoGen(exMotifi, alphabet);
+    [~, hfig] = seqlogoGen(exMotifi, options.alphabet);
     [~, exMotifi.cSeed]=max(exMotifi.PWM);
 
-    cSeedStr = strjoin(string(exMotifi.cSeed), '_');
+    % cSeedStr = strjoin(string(exMotifi.cSeed), '_');
 
-    figname=strcat(outputFolderName, 'mLogo',num2str(iexMotif), '_',cSeedStr, fignamExtnd);
+    figname=strcat(outputFolderName, 'mLogo',num2str(iexMotif), '.jpg');
     saveas(hfig,figname)
 
 end
@@ -121,34 +122,10 @@ plot(pvalueVec, '-kv', 'LineWidth',1)
 grid on
 
 xlabel('motif index')
-ylabel('pvalue')
+ylabel('evalue')
 
-figname=strcat(outputFolderName,'pvalueW', num2str(W), fignamExtnd);
+figname=strcat('output/','pvalueW', num2str(options.W), '.jpg');
 saveas(gcf,figname)
 
-
-
-%
-
-rmeConfig=cgOptions;
-
-rmeConfig.cTypeChars=cTypeChars;
-
-rmeConfig.cellTypes=cellTypesOne;
-
-rmeConfig.W=W;
-
-rmeConfig.randiHold=randiHold;
-
-if  strcmpi(shuffleMode, 'noisy')
-    rmeConfig.randiHoldR=randiHoldR;
-else
-    rmeConfig.randiHoldR=randiHold;
-end
-
-readmeFileName=strcat(outputFolderName,'readme.txt');
-rmeConfig.isEraseFixed=false;
-rmeConfig.commandText=commandText;
-writeReadme(readmeFileName, rmeConfig);
 
 
