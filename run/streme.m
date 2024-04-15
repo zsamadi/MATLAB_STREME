@@ -1,4 +1,4 @@
-function runStreme(filename, options)
+function streme(filename, options)
 
 
 arguments

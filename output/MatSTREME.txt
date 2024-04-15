@@ -92,5 +92,5 @@ Motif Analysis Finished Becasue 3 Consecutive Nonsignificant Motifs Were Found
 **************************************************
 CPU:		ZAIN-DELL8520
 **************************************************
-FINALTIME:	69.26 seconds
+FINALTIME:	70.14 seconds
 **************************************************
