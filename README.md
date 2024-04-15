@@ -20,7 +20,7 @@ This folder contains main execution function for the algorithm. Going into this 
 |  evalue=false   |    using evalue instead of pvalue for significance test.  |
 |  nmotifs=0      |    number of motifs we are looking for, overwrites threshold if it's greater than 0.  |
 |  rvc=true        |   reverse complement.  |
- |  mkvOrder=0    |    Markov order for background and negative data generation.  |
+ |  mkvOrder=0    |    Markov order for background and negative control data generation.  |
 |  W=6            | length of the motif.   |
 |  threshold=0.01  |  threshold for motif pvalue obtained from hold-out testing data.   |
 | hFract=0.1     |   Fraction of data as hold-out.  |
@@ -36,7 +36,7 @@ streme('exData.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, n
   
 [func](https://github.com/zsamadi/MATLAB-STREME/tree/main/func)
 
-Contains related functions for running Streme. This folder should be at the same folder as run folder or its path should be added to the MATLAB path. 
+Contains related functions for running streme. This folder should be at the same folder as the run folder or its path should be added to the MATLAB path. 
 
 [output](https://github.com/zsamadi/MATLAB-STREME/tree/main/output)
 
