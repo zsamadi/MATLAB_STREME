@@ -19,7 +19,7 @@ This folder contains main execution function for the algorithm. Going into this 
 |  patience=3    |    number consecutive nonsignificant motifs.   |
 |  evalue=false   |    using evalue instead of pvalue for significance test.  |
 |  nmotifs=0      |    number of motifs we are looking for, overwrites threshold if it's greater than 0.  |
-|  rvp=true        |   reverse complement.  |
+|  rvc=true        |   reverse complement.  |
  |  mkvOrder=0    |    Markov order for background and negative data generation.  |
 |  W=6            | length of the motif.   |
 |  threshold=0.01  |  threshold for motif pvalue obtained from hold-out testing data.   |
@@ -29,7 +29,7 @@ This folder contains main execution function for the algorithm. Going into this 
 You can use the following command to modify all possible smore options: 
 
 ```
-streme('exData.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvp=true, ...
+streme('exData.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvc=true, ...
     mkvOrder=0, W=6,threshold=0.01, hFract=0.1, alphabet='ABCDEFGHIJKLMNO');
 
 ```
