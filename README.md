@@ -30,7 +30,7 @@ You can use the following command to modify all possible smore options:
 
 ```
 streme('exData.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvc=true, ...
-    mkvOrder=0, W=6,threshold=0.01, hFract=0.1, alphabet='ABCDEFGHIJKLMNO');
+    mkvOrder=0, W=6,threshold=0.01, hFract=0.1, alphabet='ACGT');
 
 ```
   
