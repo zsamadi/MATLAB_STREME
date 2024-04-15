@@ -12,19 +12,19 @@ This folder contains main execution function for the algorithm. Going into this 
 
   | input       | Description | 
 | :---        |    :----:   |  
-| **'exDataFa.fasta'**      | input filename for fasta format data.       | 
-| **NEVAL=25**  | number of initial Evaluated seeds.        | 
-|  **NREF=4**        |    number of refined seeds.  |
-|  **nRefIter= 20**   |    number of iterations for nestled enrichment.  |
-|  **patience=3**    |    number consecutive nonsignificant motifs.   |
-|  **evalue=false**   |    using evalue instead of pvalue for significance test.  |
-|  **nmotifs=0**      |    number of motifs we are looking for, overwrites threshold if it's greater than 0.  |
-|  **rvp=true**        |   reverse complement.  |
- |  **mkvOrder=0**    |    Markov order for background and negative data generation.  |
-|  **W=6**             | length of the motif.   |
-|  **threshold=0.01**  |  threshold for motif pvalue obtained from hold-out testing data.   |
-|  **hFract=0.1**     |   Fraction of data as hold-out.  |
-|  **alphabet='ACGT'**   |     alphabet for input data.  |
+|'exDataFa.fasta'      | input filename for fasta format data.       | 
+|NEVAL=25  | number of initial Evaluated seeds.        | 
+|  NREF=4       |    number of refined seeds.  |
+|  nRefIter= 20  |    number of iterations for nestled enrichment.  |
+|  patience=3    |    number consecutive nonsignificant motifs.   |
+|  evalue=false   |    using evalue instead of pvalue for significance test.  |
+|  nmotifs=0      |    number of motifs we are looking for, overwrites threshold if it's greater than 0.  |
+|  rvp=true        |   reverse complement.  |
+ |  mkvOrder=0    |    Markov order for background and negative data generation.  |
+|  W=6            | length of the motif.   |
+|  threshold=0.01  |  threshold for motif pvalue obtained from hold-out testing data.   |
+| hFract=0.1     |   Fraction of data as hold-out.  |
+|  alphabet='ACGT'  |     alphabet for input data.  |
 
 You can use the following command to modify all possible smore options: 
 
@@ -41,3 +41,6 @@ Contains related functions for running Streme. This folder should be at the same
 [output](https://github.com/zsamadi/MATLAB-STREME/tree/main/output)
 
 Default folder for saving the output results. The folder currently contains output results of running the algorithm on the default input of "exDataFa.fasta" file. 
+
+## Questions
+Please send questions or possible issues with running the code on your data to Zain Samadi (zainsamadi at ucla.edu). 
