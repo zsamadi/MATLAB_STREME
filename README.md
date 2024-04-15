@@ -8,7 +8,7 @@ A sample input DNA sequences with fasta format extracted from [RefSeq Transcript
 
 [run](https://github.com/zsamadi/MATLAB-STREME/tree/main/run)
 
-This folder contains main execution function for the algorithm. Going into this folder and entering Streme without any option in the MATLAB command window will run the algorithm with default settings. The default input data is "exData.fasta" in "data" folder. Output results and related figures will be saved in the "output" folder by default. The  settings for the algorithm along with their description and default values are provided in the following table.
+This folder contains main execution function for the algorithm. Going into this folder and entering streme without any option in the MATLAB command window will run the algorithm with default settings. The default input data is "exData.fasta" in "data" folder. Output results and related figures will be saved in the "output" folder by default. The  settings for the algorithm along with their description and default values are provided in the following table.
 
   | input       | Description | 
 | :---        |    :----:   |  
@@ -29,7 +29,7 @@ This folder contains main execution function for the algorithm. Going into this 
 You can use the following command to modify all possible smore options: 
 
 ```
-runStreme('myFile.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvp=true, ...
+streme('myFile.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvp=true, ...
     mkvOrder=0, W=6,threshold=0.01, hFract=0.1, alphabet='ABCDEFGHIJKLMNO');
 
 ```
