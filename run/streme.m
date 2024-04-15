@@ -4,6 +4,7 @@ function streme(filename, options)
 arguments
 
     filename='exData.fasta';
+    options.outFolder='output';
     options.NEVAL=25;
     options.NREF=4;
     options.prior=0.01;
@@ -20,9 +21,10 @@ arguments
     options.rvc=true;
     options.hFrac=0.1;
 
+
 end
 
-outputFolderName='output/';
+outputFolderName=strcat(options.outFolder, '/');
 
 cd(fileparts(which(mfilename)));
 cd('..\')
@@ -82,7 +84,7 @@ elapsedTime=toc(timerValue);
 
 bkg.PWM0=background{1};
 bkg.mkvOrder=options.mkvOrder;
-filename='output/MatSTREME.txt';
+filename=strcat(outputFolderName, 'MatSTREME.txt');
 writeTextOutput(filename, extMotif,bkg,  textOut,commandText, elapsedTime, options.alphabet);
 
 
@@ -124,7 +126,7 @@ grid on
 xlabel('motif index')
 ylabel('evalue')
 
-figname=strcat('output/','pvalueW', num2str(options.W), '.jpg');
+figname=strcat(outputFolderName,'pvalueW', num2str(options.W), '.jpg');
 saveas(gcf,figname)
 
 
