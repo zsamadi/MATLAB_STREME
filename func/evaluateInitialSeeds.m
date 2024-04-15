@@ -114,7 +114,7 @@ maxWidths=maxWidths(fisherPerm);
 
 %discarding rv symmetric seeds
 
-if (options.rvp)
+if (options.rvc)
 
     unqWMersAllS=unqWMersAll;
     swFlag=unqWMersAllS(:, 1)>unqWMersAllS(:, end);

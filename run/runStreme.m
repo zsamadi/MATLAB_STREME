@@ -3,7 +3,7 @@ function runStreme(filename, options)
 
 arguments
 
-    filename='exDataFa.fasta';
+    filename='exData.fasta';
     options.NEVAL=25;
     options.NREF=4;
     options.prior=0.01;
@@ -17,7 +17,7 @@ arguments
     options.nmotifs=0;
     options.alphabet='ACGT';
     options.mkvOrder=0;
-    options.rvp=true;
+    options.rvc=true;
     options.hFrac=0.1;
 
 end
@@ -39,7 +39,7 @@ timerValue=tic;
 
 sqOptions.hFrac=options.hFrac;
 sqOptions.mkvOrder=options.mkvOrder;
-sqOptions.rvp=options.rvp;
+sqOptions.rvc=options.rvc;
 sqOptions.isChar=true;
 sqOptions.aLen=length(options.alphabet);
 sqOptions.alphabet=options.alphabet;

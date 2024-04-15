@@ -23,7 +23,7 @@ dSeqLens=dSeqLens(dSeqLens>0);
 
 dSeqSt=horzcat(dSeq{:});
 
-if (scrSpecs.rvp)
+if (scrSpecs.rvc)
     cnvOptions.numPSeqs=Ns/2;
 else
     cnvOptions.numPSeqs=Ns;
@@ -31,7 +31,7 @@ end
 
 
 cnvOptions.W=W;
-cnvOptions.rvp=scrSpecs.rvp;
+cnvOptions.rvc=scrSpecs.rvc;
 
 cnvOptions.allMers=false;
 cnvOptions.pnSeq=false;

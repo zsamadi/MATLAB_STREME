@@ -29,7 +29,7 @@ filterSpecs.scoreThr=outMotif.scoreThr;
 filterSpecs.back=seqData.back;
 filterSpecs.mkvOrder=0;
 
-filterSpecs.rvp=seqData.rvp;
+filterSpecs.rvc=seqData.rvc;
 
 
 [pSeqFiltered, pSeqErased]=seqFilterNew(seqData.pSeq, filterSpecs);

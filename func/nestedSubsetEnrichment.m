@@ -119,7 +119,7 @@ motifsRefined.PWMOutCell=PWMOutCell;
 motifsRefined.seedsChar=[char(seedsNREF+64), num2str([pvalueOptimum, thrOptVec])];
 motifsRefined.isPal=false;
 
-if (options.rvp)
+if (options.rvc)
     
     [palModel, edOptimum]=getPalMode(PWMSCell{1}, PWM0);
     

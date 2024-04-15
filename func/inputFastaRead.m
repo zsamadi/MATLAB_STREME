@@ -2,7 +2,7 @@ function [posSeq, negSeq, pHoldSeq, nHoldSeq]=inputFastaRead(filename, options)
 
 % hFrac=options.hFrac;
 % order=options.mkvOrder;
-% rvpath=options.rvp;
+% rvcath=options.rvc;
 
 fastaStruct = fastaread(filename);
 numData=length(fastaStruct);

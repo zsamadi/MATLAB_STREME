@@ -15,7 +15,7 @@ function [seqFiltered, erasedSites]=seqFilterNew(seq, filterSpecs)
 PWMS=filterSpecs.PWMS;
 threshold=filterSpecs.scoreThr;
 
-if (filterSpecs.rvp)
+if (filterSpecs.rvc)
     numSeqs=length(seq)/2;
 
 
@@ -37,8 +37,8 @@ W=size(PWMS, 2);
 
 cnvOptions.numPSeqs=numSeqs;
 cnvOptions.W=W;
-% cnvOptions.rvp=filterSpecs.rvp;
-cnvOptions.rvp=false;
+% cnvOptions.rvc=filterSpecs.rvc;
+cnvOptions.rvc=false;
 
 cnvOptions.allMers=true;
 cnvOptions.pnSeq=false;
@@ -50,11 +50,11 @@ cnvOptions.pnSeq=false;
 % merEyesOnt=merEyesOn;
 % XNmersot=XNmerso;
 
-% if (filterSpecs.rvp)
-%     rvpFlag=XNmerso(:, 1)>XNmerso(:, W);
-%     XNmerso(rvpFlag, 1:W)=XNmerso(rvpFlag, W:-1:1);
+% if (filterSpecs.rvc)
+%     rvcFlag=XNmerso(:, 1)>XNmerso(:, W);
+%     XNmerso(rvcFlag, 1:W)=XNmerso(rvcFlag, W:-1:1);
 %     merEyesOnW=(reshape(merEyesOn, W, [])).';
-%     merEyesOnW(rvpFlag, :)=merEyesOnW(rvpFlag, end:-1:1);
+%     merEyesOnW(rvcFlag, :)=merEyesOnW(rvcFlag, end:-1:1);
 %     merEyesOnW=merEyesOnW.';
 %     merEyesOn=merEyesOnW(:);
 % 
@@ -85,19 +85,19 @@ eraseFlagLetteron=eraseFlagLettero.';
 eraseFlagLetteron=eraseFlagLetteron(:);
 
 %Also erase reverse path
-if filterSpecs.rvp
-    [PWMScoreoRVP, PWMScoreLetteroRVP]=scoreWords(XNmerUo, PWMS(end:-1:1, end:-1:1), filterSpecs);
+if filterSpecs.rvc
+    [PWMScoreorvc, PWMScoreLetterorvc]=scoreWords(XNmerUo, PWMS(end:-1:1, end:-1:1), filterSpecs);
     
-    eraseFlagoRVP=(PWMScoreoRVP>=threshold);
+    eraseFlagorvc=(PWMScoreorvc>=threshold);
     
-    eraseFlagoRVP=eraseFlagoRVP(jxo);
-    PWMScoreLetteroRVP=PWMScoreLetteroRVP(jxo, :);
-    eraseFlagLetteroRVP=(PWMScoreLetteroRVP>0);
-    eraseFlagLetteroRVP=eraseFlagLetteroRVP&eraseFlagoRVP;
-    eraseFlagLetteronRVP=eraseFlagLetteroRVP.';
+    eraseFlagorvc=eraseFlagorvc(jxo);
+    PWMScoreLetterorvc=PWMScoreLetterorvc(jxo, :);
+    eraseFlagLetterorvc=(PWMScoreLetterorvc>0);
+    eraseFlagLetterorvc=eraseFlagLetterorvc&eraseFlagorvc;
+    eraseFlagLetteronrvc=eraseFlagLetterorvc.';
     
-    eraseFlagLetteronRVP=eraseFlagLetteronRVP(:);
-    eraseFlagLetteron=eraseFlagLetteron|eraseFlagLetteronRVP;
+    eraseFlagLetteronrvc=eraseFlagLetteronrvc(:);
+    eraseFlagLetteron=eraseFlagLetteron|eraseFlagLetteronrvc;
 end
 
 
@@ -118,10 +118,10 @@ seqFilteredERS=seqH;
 seqFilteredERS(eraseLetters)=0;
 seqFiltered=mat2cell(seqFilteredERS, 1,seqLens);
 
-if (filterSpecs.rvp)
-    seqFilteredRVP=mat2cell(revCmp(seqFilteredERS, size(PWMS, 1)), 1,seqLens(end:-1:1));
-    seqFilteredRVP=seqFilteredRVP(end:-1:1);
-    seqFiltered=(horzcat(seqFiltered, seqFilteredRVP)).';
+if (filterSpecs.rvc)
+    seqFilteredrvc=mat2cell(revCmp(seqFilteredERS, size(PWMS, 1)), 1,seqLens(end:-1:1));
+    seqFilteredrvc=seqFilteredrvc(end:-1:1);
+    seqFiltered=(horzcat(seqFiltered, seqFilteredrvc)).';
 
 
 end

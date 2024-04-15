@@ -76,13 +76,13 @@ nSeqESt=horzcat(nSeqE{:});
 pnseqEx=[pSeqESt,nSeqESt];
 pnSeqLens=[pSeqLens;nSeqLens];
 
-if options.rvp
+if options.rvc
     cnvOptions.numPSeqs=numPSeqs/2;
 else
     cnvOptions.numPSeqs=numPSeqs;
 end
 cnvOptions.W=wMax;
-cnvOptions.rvp=options.rvp;
+cnvOptions.rvc=options.rvc;
 
 cnvOptions.allMers=false;
 cnvOptions.pnSeq=true;

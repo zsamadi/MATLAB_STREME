@@ -37,7 +37,7 @@ background=getMarkovFromSequence(vertcat(seqData.pSeq, seqData.pHSeq),options.al
 
 options.numCells=length(options.alphabet);
 
-if options.rvp
+if options.rvc
     numPSeqs=length(seqData.pSeq)/2;
     numNSeqs=length(seqData.nSeq)/2;
     numPHSeqs=length(seqData.pHSeq)/2;
@@ -52,7 +52,7 @@ end
 seqData.lens=[numPSeqs,numNSeqs,numPHSeqs,numNHSeqs];
 seqData.mkvOrder=options.mkvOrder;
 seqData.back=background;
-seqData.rvp=options.rvp;
+seqData.rvc=options.rvc;
 
 
 wMin=options.wMin;
@@ -76,13 +76,13 @@ coptions.MinSeedWidth=options.MinSeedWidth;
 
 coptions.numSeqs=numPSeqs;
   
-coptions.rvp=options.rvp;
+coptions.rvc=options.rvc;
 
 
 eoptions.NEVAL=options.NEVAL;
 eoptions.numCells=options.numCells;
 eoptions.numSeqs=seqData.lens(1:2);
-eoptions.rvp=options.rvp;
+eoptions.rvc=options.rvc;
 eoptions.bernoulli=options.bernoulli;
 
 

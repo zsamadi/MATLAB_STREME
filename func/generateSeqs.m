@@ -13,13 +13,13 @@ function [posSeq, negSeq, pHoldSeq, nHoldSeq]=generateSeqs(dstream,options)
 hFrac=options.hFrac;
 order=options.mkvOrder;
 
-rvpath=options.rvp;
+rvcath=options.rvc;
 
 numSeqs=length(dstream);
 
 shStream=cell(numSeqs, 1);
 
- if (rvpath)
+ if (rvcath)
     dstreamInv=cell(numSeqs, 1);
     shStreamInv=cell(numSeqs, 1);
  end
@@ -44,7 +44,7 @@ for iSp=1:numSeqs
   
     [~,shStream{iSp}]=ismember(shuffled, options.alphabet);
 
-   if (rvpath)
+   if (rvcath)
        dstreamInv{iSp}=revCmp(dstreamDouble{iSp}, options.aLen); 
        shStreamInv{iSp}=revCmp(shStream{iSp}, options.aLen);
     end
@@ -79,7 +79,7 @@ nHoldSeq=shStream(1:numHSeq);
 negSeq=shStream(numHSeq+1:end);
 
 
- if (rvpath)
+ if (rvcath)
     posSeq=vertcat(posSeq, dstreamInv(numHSeq+1:end));
     negSeq=vertcat(negSeq, shStreamInv(numHSeq+1:end));
     pHoldSeq=vertcat(pHoldSeq, dstreamInv(1:numHSeq));

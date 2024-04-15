@@ -13,7 +13,7 @@ function  [XNmerso, merEyson]=convertNMer(seq,seqLens, options)
 
 numPSeqs=options.numPSeqs;
 W=options.W;
-rvPath=options.rvp;
+rvcSeq=options.rvc;
 allMers=options.allMers;
 
 N=length(seqLens);
@@ -59,7 +59,7 @@ else
 end
 XNmer=XNmer(~XNmerErased, :);
 
-if (rvPath)
+if (rvcSeq)
     XNmerSitesP=repelem((1:numPSeqs).', numShifts(1:numPSeqs), 1);
     XNmerSitesP=XNmerSitesP(:);
     if options.pnSeq

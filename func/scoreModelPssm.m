@@ -33,7 +33,7 @@ PWMOutCell=seedsRefined.PWMOutCell;
 
 thrOpt=seedsRefined.thresholdOptimum;
 
-if options.rvp
+if options.rvc
     nPos=length(posHoldSeq)/2;
     nNeg=length(negHoldSeq)/2;
 else
@@ -44,7 +44,7 @@ end
 
 scrSpecs.back=seqData.back;
 scrSpecs.mkvOrder=seqData.mkvOrder;
-scrSpecs.rvp=options.rvp;
+scrSpecs.rvc=options.rvc;
 
 
 if nPos>0
