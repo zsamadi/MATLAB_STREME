@@ -8,11 +8,11 @@ A sample input DNA sequences with fasta format extracted from [RefSeq Transcript
 
 [run](https://github.com/zsamadi/MATLAB-STREME/tree/main/run)
 
-This folder contains main execution function for the algorithm. Going into this folder and entering Streme without any option in the MATLAB command window will run the algorithm with default settings. The default input data is "exDataFa.fasta" in "data" folder. Output results and related figures will be saved in the "output" folder by default. The  settings for the algorithm along with their description and default values are provided in the following table.
+This folder contains main execution function for the algorithm. Going into this folder and entering Streme without any option in the MATLAB command window will run the algorithm with default settings. The default input data is "exData.fasta" in "data" folder. Output results and related figures will be saved in the "output" folder by default. The  settings for the algorithm along with their description and default values are provided in the following table.
 
   | input       | Description | 
 | :---        |    :----:   |  
-|'exDataFa.fasta'      | input filename for fasta format data.       | 
+|'exData.fasta'      | input filename for fasta format data.       | 
 |NEVAL=25  | number of initial Evaluated seeds.        | 
 |  NREF=4       |    number of refined seeds.  |
 |  nRefIter= 20  |    number of iterations for nestled enrichment.  |
@@ -40,7 +40,7 @@ Contains related functions for running Streme. This folder should be at the same
 
 [output](https://github.com/zsamadi/MATLAB-STREME/tree/main/output)
 
-Default folder for saving the output results. The folder currently contains output results of running the algorithm on the default input of "exDataFa.fasta" file. 
+Default folder for saving the output results. The folder currently contains output results of running the algorithm on the default input of "exData.fasta" file. 
 
 ## Questions
 Please send questions or possible issues with running the code on your data to Zain Samadi (zainsamadi at ucla.edu). 
