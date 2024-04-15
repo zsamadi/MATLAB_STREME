@@ -13,6 +13,7 @@ This folder contains main execution function for the algorithm. Going into this 
   | input       | Description | 
 | :---        |    :----:   |  
 |'exData.fasta'      | input filename for fasta format data.       | 
+|outFolder='output'      | output folder name, can be relative path or absolute path | 
 |NEVAL=25  | number of initial Evaluated seeds.        | 
 |  NREF=4       |    number of refined seeds.  |
 |  nRefIter= 20  |    number of iterations for nestled enrichment.  |
@@ -29,7 +30,7 @@ This folder contains main execution function for the algorithm. Going into this 
 You can use the following command to modify all possible smore options: 
 
 ```
-streme('exData.fasta',NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvc=true, ...
+streme('exData.fasta',outFolder='output' , NEVAL=25, NREF=4, nRefIter=20, patience=3, evalue=false, nmotifs=0, rvc=true, ...
     mkvOrder=0, W=6,threshold=0.01, hFract=0.1, alphabet='ACGT');
 
 ```
